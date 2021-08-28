@@ -8,8 +8,6 @@ exports.connect = ()=>{
         //Note: config สำหรับ mongodb Atlas
       //  useNewUrlParser: true,
         //useUnifiedTopology: true,
-       // useCreateIndex: true,
-       // useFindAndModify: false,
     }).then(()=>{
         console.log("Success connected to database");
     }).catch((error)=>{
