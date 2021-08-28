@@ -5,11 +5,16 @@ const {MONG_URI} = process.env;
 
 exports.connect = ()=>{
     mongoose.connect(MONG_URI, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        useCreateIndex: true,
-        useFindAndModify: false,
+        //Note: config สำหรับ mongodb Atlas
+      //  useNewUrlParser: true,
+        //useUnifiedTopology: true,
+       // useCreateIndex: true,
+       // useFindAndModify: false,
     }).then(()=>{
         console.log("Success connected to database");
+    }).catch((error)=>{
+        console.log("Error connecting to database: " + error.message);
+        console.log(error);
+        process.exit(1);
     })
 }
